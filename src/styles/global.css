@@ -1,0 +1,57 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+    font-size: 16px;
+    @media all and (max-width: 1300px){
+        font-size: 14px;
+    }
+    @media all and (max-width: 1200px){
+        font-size: 12px;
+    }
+    @media all and (max-width: 768px){
+        font-size: 10px;
+    }
+    @media all and (max-width: 600px){
+        font-size: 8px;
+    }
+    scrollbar-width: thin;
+}
+
+.locked{
+    overflow: hidden;
+}
+
+.with-arrow{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    cursor: pointer;
+    width: fit-content;
+    --arrow-offset: var(--arrow-offset-y);
+    &::after{
+        content: url("../assets/arrow_right.svg");
+        flex-shrink: 0;
+        width: 51px;
+        height: 8px;
+        display: flex;
+        align-items: center;
+        transition: all 0.75s;
+        transform-origin: left;
+        translate: 0 var(--arrow-offset, 0px);
+        @media all and (max-width: 768px){
+            width: 35px;
+            height: 10px;
+            --arrow-offset: calc(var(--arrow-offset-y) - 5px);
+        }
+        @media all and (max-width: 600px){
+            --arrow-offset: calc(var(--arrow-offset-y) - 7px);
+        }
+    }
+    &:hover::after{
+        transform: scaleX(1.25);
+    }
+}

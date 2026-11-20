@@ -1,0 +1,1442 @@
+---
+import { Image } from 'astro:assets';
+
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectHero from "../../../components/ProjectHero.astro";
+import ProjectFooter from '../../../components/ProjectFooter.astro';
+
+import heroImage from "../../../assets/images/accord/accord-hero.jpg";
+const heroTitle = ["Accordbank", "from logo to visual system"];
+const heroDate = "2024 — present";
+const heroDescription = ["visual identity", "art direction", "campaigns", "spatial", "digital", "print", "merchandise"];
+
+const footerTitle = "Accordbank";
+const footerSubtitle = ["brand & visual system", "2024 — present"];
+const footerDescription = heroDescription;
+
+const projectImages = import.meta.glob<ImageMetadata>("/src/assets/images/accord/*.{jpg,png}", { eager: true, import: 'default' });
+---
+
+<BaseLayout
+    title="Accord Bank"
+    description="Alex Martyniuk is a Ukrainian designer and art director specializing in brand identity, visual systems, and spatial design. With a keen eye for detail and a passion for creating meaningful experiences, Alex helps brands connect with their audiences through thoughtful design solutions."
+    og={{
+        title: "Alex Martyniuk - Designer & Art Director",
+        image: "https://example.com/og-image.jpg",
+    }}
+>
+    <ProjectHero media={heroImage} title={heroTitle} date={heroDate} description={heroDescription}/>
+    <div class="project-parts">
+        <div class="project-part starting-point">
+            <div class="part-id">01</div>
+            <div class="part-description-block">
+                <div class="part-title">starting point</div>
+                <div class="part-subtitle">building beyond the logo</div>
+                <div class="part-description">The starting point was an established logo with no broader visual system. My role was to build a consistent visual language around it — one that could extend the brand across communication, physical spaces, digital touchpoints, and everyday applications</div>
+            </div>
+            <div class="part-image logo-ukr-image">
+                <Image src={projectImages["/src/assets/images/accord/accord-logo-ukr.png"]} alt="Project description image" />
+            </div>
+            <div class="part-image logo-eng-image">
+                <Image src={projectImages["/src/assets/images/accord/accord-logo-eng.png"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                existing identity<br />
+                logo | UA<br />
+                logo | EN
+            </div>
+        </div>
+        <div class="project-part visual-language">
+            <div class="part-id">02</div>
+            <div class="part-description-block">
+                <div class="part-title">visual language</div>
+                <div class="part-subtitle">from symbol to system</div>
+                <div class="part-description">I developed a flexible graphic language that expands the existing identity beyond the logo. Built around the geometry of the existing symbol and the brand’s established visual codes, the system creates a recognisable foundation for communication across formats and scales, and touchpoints</div>
+            </div>
+            <div class="part-image logo-ukr-bg-image">
+                <Image src={projectImages["/src/assets/images/accord/accord-logo-ukr-bg-white.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image logo-eng-bg-image">
+                <Image src={projectImages["/src/assets/images/accord/accord-logo-eng-bg-red.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                system development<br />
+                visual language<br />
+                graphic principles<br />
+                applications
+            </div>
+        </div>
+        <div class="project-part safe-simple">
+            <div class="part-description">The brand values become part of the visual language — translated into modular forms that can be rearranged, scaled, and adapted across different applications</div>
+            <div class="part-image safe-pattern-eng-image">
+                <Image src={projectImages["/src/assets/images/accord/pattern-eng-white.png"]} alt="Project description image" />
+            </div>
+            <div class="part-image safe-pattern-ukr-image">
+                <Image src={projectImages["/src/assets/images/accord/pattern-ukr-red.png"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                brand values<br />
+                modular forms<br />
+                flexible layouts<br />
+                scalable system
+            </div>
+        </div>
+        <div class="project-part patterns">
+            <div class="part-description">The pattern extends the brand’s geometry into a flexible visual element inspired by Ukrainian ornament, connecting individual forms into a continuous system</div>
+            <div class="part-image small-pattern-image">
+                <Image src={projectImages["/src/assets/images/accord/sm-pattern.png"]} alt="Project description image" />
+            </div>
+            <div class="part-image small-pattern-with-logo-image">
+                <Image src={projectImages["/src/assets/images/accord/sm-pattern-logo.png"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                geometry<br />
+                pattern<br />
+                rhythm<br />
+                connection<br />
+                recognition
+            </div>
+            <div class="part-image big-pattern-red-image">
+                <Image src={projectImages["/src/assets/images/accord/pattern-red.png"]} alt="Project description image" />
+            </div>
+            <div class="part-image big-pattern-grey-image">
+                <Image src={projectImages["/src/assets/images/accord/pattern-grey.png"]} alt="Project description image" />
+            </div>
+        </div>
+        <div class="project-part spatial-identity">
+            <div class="part-id">03</div>
+            <div class="part-description-block">
+                <div class="part-title">spatial identity</div>
+                <div class="part-subtitle">identity enters the space</div>
+                <div class="part-description">
+                    <p>
+                        I translated the visual system into the bank’s physical environment, developing principles for how the pattern and brand elements adapt to different architectural surfaces — from glass partitions and windows to service and entrance areas.
+                    </p>
+                    <p>
+                        Rather than applying one fixed graphic, the system changes in scale, density, and composition to work naturally within each space while maintaining a consistent identity
+                    </p>
+                </div>
+            </div>
+            <div class="part-image bank-outside-image">
+                <Image src={projectImages["/src/assets/images/accord/3-outside.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image bank-inside-sm-image">
+                <Image src={projectImages["/src/assets/images/accord/3-inside-sm.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image bank-inside-big-image">
+                <Image src={projectImages["/src/assets/images/accord/3-inside.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                environment<br />
+                glass graphics<br />
+                navigation<br />
+                scale<br />
+                application
+            </div>
+        </div>
+        <div class="project-part brand-communication">
+            <div class="part-id">04</div>
+            <div class="part-description-block brand-description">
+                <div class="part-title">brand communication</div>
+                <div class="part-subtitle">from system to communication</div>
+                <div class="part-description">The visual identity extends into a flexible communication system, supporting different messages, audiences, and formats while maintaining a consistent and recognisable brand presence</div>
+            </div>
+            <div class="part-image deposit-image">
+                <Image src={projectImages["/src/assets/images/accord/4-deposit.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image man-deposit-image">
+                <Image src={projectImages["/src/assets/images/accord/4-man-deposit.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-description-block product-description">
+                <div class="part-title">product campaigns</div>
+                <div class="part-subtitle">turning products into clear communication</div>
+                <div class="part-description">Product communication balances financial information with a clear visual hierarchy and consistent brand expression. Flexible layouts adapt to different offers and messages while keeping every campaign part of the same visual system</div>
+            </div>
+            <div class="part-image credit-image">
+                <Image src={projectImages["/src/assets/images/accord/4-credit.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image auto-credit-image">
+                <Image src={projectImages["/src/assets/images/accord/4-auto.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                product campaigns<br />
+                flexible layouts<br />
+                information hierarchy<br />
+                consistent identity
+            </div>
+        </div>
+        <div class="project-part image-communication">
+            <div class="part-description-block">
+                <div class="part-title">image communication</div>
+                <div class="part-subtitle">building the brand beyond products</div>
+                <div class="part-description">Image-led communication shifts the focus from individual products to the brand itself — its values, positioning, and relationship with its audience. A consistent visual framework connects different messages while allowing each one to set its own tone</div>
+            </div>
+            <div class="part-image zsu-image">
+                <Image src={projectImages["/src/assets/images/accord/4-zsu.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image poruch-image">
+                <Image src={projectImages["/src/assets/images/accord/4-poruch.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image service-image">
+                <Image src={projectImages["/src/assets/images/accord/4-service.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                image communication<br />
+                brand values<br />
+                tone of voice<br />
+                audience connection
+            </div>
+        </div>
+        <div class="project-part digital-communication">
+            <div class="part-description-block">
+                <div class="part-title">digital communication</div>
+                <div class="part-subtitle">one system, multiple formats</div>
+                <div class="part-description">The visual language extends across social media, recruitment platforms, and digital advertising. Modular layouts, typography, and graphic elements adapt to different formats and content while maintaining a consistent brand presence</div>
+            </div>
+            <div class="part-image digital-image">
+                <Image src={projectImages["/src/assets/images/accord/4-digital.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image didgest-image">
+                <Image src={projectImages["/src/assets/images/accord/4-didgest.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image work-image">
+                <Image src={projectImages["/src/assets/images/accord/4-work.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image cashback-image">
+                <Image src={projectImages["/src/assets/images/accord/4-cashback.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image zsu-green-image">
+                <Image src={projectImages["/src/assets/images/accord/4-zsu-green.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                social media<br />
+                recruitment<br />
+                digital advertising<br />
+                platform-specific formats
+            </div>
+        </div>
+        <div class="project-part everyday-touchpoints">
+            <div class="part-id">05</div>
+            <div class="part-description-block touchpoints-description">
+                <div class="part-title">everyday touchpoints</div>
+                <div class="part-subtitle">the brand in everyday use</div>
+                <div class="part-description">The visual language continues across merchandise and internal brand materials — turning practical objects into recognisable parts of the identity</div>
+            </div>
+            <div class="part-image interior-image">
+                <Image src={projectImages["/src/assets/images/accord/5-interior.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-image man-image">
+                <Image src={projectImages["/src/assets/images/accord/5-man-sm.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-description-block apparel-description">
+                <div class="part-description">From apparel and bags to stationery, calendars, and everyday objects, each application uses the system differently while remaining unmistakably part of the same brand</div>
+            </div>
+            <div class="part-image person-image">
+                <Image src={projectImages["/src/assets/images/accord/5-person.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-tags">
+                merchandise<br />
+                apparel<br />
+                stationery<br />
+                corporate materials<br />
+                everyday objects
+            </div>
+        </div>
+        <div class="project-part system-action">
+            <div class="part-id-description-block">
+                <div class="part-id">06</div>
+                <div class="part-description-block system-description">
+                    <div class="part-title">the system in action</div>
+                    <div class="part-subtitle">one identity — multiple touchpoints</div>
+                </div>
+            </div>
+            <div class="part-image interior-big-image">
+                <Image src={projectImages["/src/assets/images/accord/6-inside.jpg"]} alt="Project description image" />
+            </div>
+            <div class="part-description-block action-description">
+                <div class="part-description">What started as an established logo evolved into a flexible visual system — connecting brand communication, campaigns, digital touchpoints, and physical applications through one consistent visual language</div>
+            </div>
+            <div class="part-tags">
+                evolving identity<br />
+                connected touchpoints<br />
+                scalable system<br />
+                consistent experience
+            </div>
+        </div>
+    </div>
+    <ProjectFooter title={footerTitle}, subtitle={footerSubtitle} description={footerDescription}/>
+</BaseLayout>
+
+<style>
+    .project-parts{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; 
+        row-gap: 150px;
+        margin-bottom: 150px;
+        @media all and (max-width: 960px){
+            row-gap: 100px;
+            margin-bottom: 100px;
+        }
+        @media all and (max-width: 768px){
+            row-gap: 80px;
+            margin-bottom: 80px;
+        }
+        @media all and (max-width: 600px){
+            row-gap: 50px;
+            margin-bottom: 50px;
+        }
+    }
+    .part-id{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 8.125rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        transform: translateY(-16%);
+        @media all and (max-width: 450px){
+            font-size: 6rem;
+        }
+    }
+    .part-description-block{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .part-title{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 3rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        margin-bottom: 10px;
+        @media all and (max-width: 450px){
+            font-size: 2.5rem;
+        }
+    }
+    .part-subtitle{
+        font-family: 'Mulish', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 80px;
+        @media all and (max-width: 960px){
+            margin-bottom: 50px;
+        }
+        @media all and (max-width: 768px){
+            margin-bottom: 40px;
+        }
+        @media all and (max-width: 600px){
+            margin-bottom: 30px;
+        }
+    }
+    .part-description{
+        font-family: 'Mulish', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        @media all and (max-width: 850px){
+            font-size: 1.4rem;
+        }
+    }
+    .part-image{
+        width: 100%;
+        border-radius: 25px;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @media all and (max-width: 850px){
+            border-radius: 20px;
+        }
+        @media all and (max-width: 600px){
+            border-radius: 10px;
+        }
+    }
+    .part-tags{
+        font-family: 'Mulish', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.2;
+        /* min-width: 160px; */
+        @media all and (max-width: 960px){
+            font-size: 14px;
+        }
+        @media all and (max-width: 768px){
+            font-size: 12px;
+            /* min-width: 90px; */
+        }
+        @media all and (max-width: 600px){
+            font-size: 10px;
+        }
+    }
+
+    .project-part{
+        display: grid;
+        grid-auto-rows: clamp(20px, 3.7vw, 50px);
+        grid-template-columns: repeat(31, minmax(0, 1fr));
+    }
+
+    .starting-point{
+        .part-id{
+            grid-column: 16 / span 3;
+            grid-row: 1 / span 2;
+        }
+        .part-description-block{
+            grid-column: 19 / -1;
+            grid-row: 1 / span 8;
+            margin-top: 20px;
+            margin-left: 15px;
+            max-width: 460px;
+        }
+        .logo-ukr-image{
+            grid-column: 1 / span 10;
+            grid-row: 2 / span 2;
+            max-width: 420px;
+            aspect-ratio: 420 / 100;
+            img{
+                object-fit: contain;
+            }
+        }
+        .logo-eng-image{
+            grid-column: 8 / span 10;
+            grid-row: 5 / span 2;
+            max-width: 420px;
+            aspect-ratio: 420 / 100;
+            img{
+                object-fit: contain;
+            }
+        }
+        .part-tags{
+            grid-column: 1 / span 3;
+            grid-row: 7 / span 2;
+            min-width: 120px;
+        }
+        @media all and (max-width: 960px){
+            .logo-eng-image{
+                grid-column-start: 6;
+            }
+            .part-id{
+                grid-column: 14 / span 4;
+            }
+            .part-description-block{
+                grid-column-start: 18;
+                margin-left: 0px;
+            }
+        }
+        @media all and (max-width: 700px){
+            .part-id{
+                grid-column: 13 / span 4;
+                margin-left: 15px;
+            }
+            .part-description-block{
+                grid-column-start: 18;
+                grid-row: 1 / span 10;
+            }
+        }
+        @media all and (max-width: 600px){
+            .part-id{
+                grid-column: 14 / span 4;
+                margin-left: -10px;
+            }
+            .part-description-block{
+                grid-column-start: 18;
+                grid-row: 1 / span 10;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-id{
+                margin: 0;
+                grid-column: span 4 / 17;
+                justify-self: end;
+            }
+            .part-description-block{
+                margin: 0;
+                grid-column-start: 18;
+                grid-row: 1 / span 10;
+            }
+        }
+        @media all and (max-width: 330px){
+            .part-description-block{
+                grid-row: 1 / span 12;
+            }
+        }
+    }
+
+    .visual-language{
+        .part-id{
+            grid-column: 3 / span 3;
+            grid-row: 1 / span 2;
+        }
+        .part-description-block{
+            grid-column: 7 / span 9;
+            grid-row: 1 / span 11;
+            margin-top: 20px;
+            max-width: 300px;
+        }
+        .part-description{
+            max-width: 300px;
+        }
+        .logo-ukr-bg-image{
+            grid-column: 20 / -1;
+            grid-row: 2 / span 4;
+            margin-top: 20px;
+            max-width: 516px;
+            aspect-ratio: 516 / 193;
+        }
+        .logo-eng-bg-image{
+            grid-column: 16 / span 13;
+            grid-row: 8 / span 4;
+            max-width: 556px;
+            aspect-ratio: 556 / 193;
+        }
+        .part-tags{
+            grid-column: 16 / span 4;
+            grid-row: 13 / span 2;
+            min-width: 160px;
+        }
+        @media all and (max-width: 1200px){
+            .part-description{
+                max-width: 270px;
+            }
+        }
+        @media all and (max-width: 1100px){
+            .part-description{
+                max-width: 240px;
+            }
+        }
+        @media all and (max-width: 960px){
+            .part-id{
+                grid-column-start: 2;
+            }
+            .part-description{
+                margin-left: -50px;
+            }
+        }
+        @media all and (max-width: 768px){
+            .part-id{
+                grid-column-start: 1;
+            }
+            .part-description-block{
+                grid-column: 6 / span 10;
+            }
+            .part-description{
+                max-width: 200px;
+            }
+        }
+        @media all and (max-width: 600px){
+            .part-description{
+                max-width: 180px;
+            }
+        }
+        @media all and (max-width: 500px){
+            .part-description-block{
+                grid-column: 6 / span 13;
+                margin-left: 10px;
+            }
+            .part-description{
+                max-width: 180px;
+                margin-left: -60px;
+            }
+            .logo-eng-bg-image{
+                grid-column-start: 17;
+            }
+            .part-tags{
+                grid-column-start: 17;
+                grid-row: 12 / span 3;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-description-block{
+                grid-column: 6 / span 15;
+                margin: 0;
+                .part-description{
+                    margin-left: -45px;
+                    max-width: 150px;
+                }
+            }
+            .logo-ukr-bg-image{
+                grid-row-start: 3;
+            }
+        }
+        @media all and (max-width: 400px){
+            .part-description-block{
+                grid-column: 7 / span 15;
+                .part-description{
+                    max-width: 130px;
+                }
+            }
+        }
+    }
+
+    .safe-simple{
+        .part-description{
+            grid-column: 14 / span 12;
+            grid-row: 2 / span 2;
+            margin-top: 15px;
+        }
+        .safe-pattern-eng-image{
+            grid-column: 2 / span 9;
+            grid-row: 1 / span 6;
+            max-width: 386px;
+            aspect-ratio: 386 / 266;
+        }
+        .safe-pattern-ukr-image{
+            grid-column: 16 / -1;
+            grid-row: 6 / span 4;
+            max-width: 676px;
+            aspect-ratio: 676 / 180;
+        }
+        .part-tags{
+            grid-column: 11 / span 4;
+            grid-row: 7 / span 2;
+            margin-left: 20px;
+            min-width: 130px;
+        }
+        @media all and (max-width: 1100px){
+            .part-description{
+                grid-column: 14 / -3;
+                margin: 0;
+                max-width: 360px;
+            }
+            .part-tags{
+                grid-column-start: 10;
+                margin: 0;
+            }
+        }
+        @media all and (max-width: 500px){
+            .part-description{
+                grid-column: 14 / -2;
+                margin-top: -10px;
+            }
+            .part-tags{
+                grid-column-start: 8;
+            }
+        }
+        @media all and (max-width: 400px){
+            .part-description{
+                grid-column-start: 13;
+            }
+            .part-tags{
+                grid-row-start: 6;
+                grid-column-start: 5;
+            }
+            .safe-pattern-eng-image{
+                grid-column-start: 1;
+            }
+            .safe-pattern-ukr-image{
+                grid-row: 6 / span 3;
+            }
+        }
+    }
+
+    .patterns{
+        .part-description{
+            grid-column: 19 / -3;
+            grid-row: 4 / span 3;
+            max-width: 450px;
+        }
+        .small-pattern-image{
+            grid-column: 3 / span 5;
+            grid-row: 1 / span 4;
+            max-width: 193px;
+            aspect-ratio: 1 / 1;
+        }
+        .small-pattern-with-logo-image{
+            grid-column: 9 / span 5;
+            grid-row: 4 / span 4;
+            max-width: 193px;
+            aspect-ratio: 1 / 1;
+        }
+        .part-tags{
+            grid-column: 15 / span 2;
+            grid-row: 6 / span 2;
+            min-width: 90px;
+        }
+        .big-pattern-red-image{
+            grid-column: 1 / span 20;
+            grid-row: 10 / span 8;
+            max-width: 862px;
+            aspect-ratio: 862 / 392;
+            margin-top: -25px;
+            border-radius: 0;
+        }
+        .big-pattern-grey-image{
+            grid-column: 22 / -1;
+            grid-row: 11 / span 8;
+            max-width: 458px;
+            aspect-ratio: 458 / 400;
+            border-radius: 0;
+        }
+        @media all and (max-width: 960px){
+            .part-description{
+                grid-column: 19 / -2;
+                grid-row: 3 / span 3;
+            }
+            .big-pattern-red-image{
+                margin: 0;
+            }
+        }
+        @media all and (max-width: 600px){
+            .part-description{
+                grid-column: 19 / -1;
+                grid-row: 2 / span 3;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-tags{
+                grid-column-start: 2;
+            }
+            .part-description{
+                grid-column: 17 / -2;
+                grid-row-start: 3;
+            }
+            .big-pattern-red-image{
+                grid-row: 10 / span 6;
+            }
+            .big-pattern-grey-image{
+                grid-row: 11 / span 6;
+            }
+        }
+        @media all and (max-width: 350px){
+            .big-pattern-red-image{
+                grid-row: 10 / span 5;
+            }
+            .big-pattern-grey-image{
+                grid-row: 11 / span 5;
+            }
+        }
+    }
+
+    .spatial-identity{
+        .part-id{
+            grid-column: 16 / span 3;
+            grid-row: 2 / span 2;
+            margin-top: 20px;
+            margin-left: -30px;
+        }
+        .part-description-block{
+            grid-column: 19 / span 11;
+            grid-row: 3 / span 10;
+        }
+        .bank-outside-image{
+            grid-column: 1 / span 13;
+            grid-row: 1 / span 8;
+            max-width: 580px;
+            aspect-ratio: 580 / 386;
+        }
+        .bank-inside-sm-image{
+            grid-column: 4 / span 7;
+            grid-row: 10 / span 9;
+            max-width: 316px;
+            aspect-ratio: 316 / 421;
+        }
+        .bank-inside-big-image{
+            grid-column: 14 / -1;
+            grid-row: 15 / span 11;
+            max-width: 812px;
+            aspect-ratio: 812 / 540;
+        }
+        .part-tags{
+            grid-column: 4 / span 3;
+            grid-row: 19 / span 2;
+            min-width: 120px;
+        }
+        @media all and (max-width: 960px) {
+            .part-description-block{
+                grid-column: 19 / -2;
+                margin-left: 20px;
+            }
+            .bank-inside-big-image{
+                grid-row: 16 / span 10;
+            }
+        }
+        @media all and (max-width: 900px) {
+            .part-description{
+                margin-left: -50px;
+            }
+            .bank-inside-big-image{
+                margin-top: 10px;
+            }
+        }
+        @media all and (max-width: 768px){
+            .part-id{
+                margin: 10px 10px 0 -10px;
+            }
+            .part-description-block{
+                margin-left: 30px;
+            }
+            .part-description{
+                margin-left: -60px;
+            }
+        }
+        @media all and (max-width: 650px){
+            .bank-inside-big-image{
+                grid-row: 17 / span 10;
+            }
+            .bank-inside-sm-image{
+                grid-column: 3 / span 8;
+            }
+            .part-tags{
+                grid-column: 3 / span 4;
+                grid-row: 20 / span 3;
+            }
+        }
+        @media all and (max-width: 500px){
+            .part-description-block{
+                grid-column: 19 / -1;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-id{
+                margin: 0;
+                grid-column: 15 / span 5;
+            }
+            .part-description-block{
+                margin: 0;
+                grid-column: 20 / -2;
+                grid-row: 2 / span 15;
+                .part-description{
+                    max-width: 200px;
+                }
+            }
+            .bank-outside-image{
+                grid-column: 1 / span 12;
+            }
+            .bank-inside-sm-image{
+                grid-row-start: 8;
+            }
+            .bank-inside-big-image{
+                grid-row: 17 / span 9;
+            }
+            .part-tags{
+                grid-column: 1 / span 5;
+                grid-row: 16 / span 3;
+            }
+        }
+        @media all and (max-width: 360px){
+            .part-id{
+                grid-column: 14 / span 5;
+            }
+            .part-description-block{
+                grid-column: 20 / -1;
+                .part-description{
+                    margin-left: -55px;
+                    max-width: 160px;
+                }
+            }
+            .bank-inside-sm-image{
+                grid-row-start: 6;
+                margin-top: 10px;
+            }
+            .bank-inside-big-image{
+                grid-row: 17 / span 7;
+            }
+            .part-tags{
+                grid-row: 13 / span 3;
+            }
+        }
+    }
+
+    .brand-communication{
+        .part-id{
+            grid-column: 3 / span 3;
+            grid-row: 1 / span 2;
+            margin-top: 20px;
+        }
+        .brand-description{
+            grid-column: 7 / span 12;
+            grid-row: 2 / span 7;
+            max-width: 400px;
+        }
+        .deposit-image{
+            grid-column: 14 / span 5;
+            grid-row: 10 / span 7;
+            max-width: 226px;
+            aspect-ratio: 226 / 320;
+        }
+        .man-deposit-image{
+            grid-column: 20 / span 9;
+            grid-row: 1 / span 11;
+            max-width: 395px;
+            aspect-ratio: 395 / 560;
+        }
+        .product-description{
+            grid-column: 21 / span 9;
+            grid-row: 17 / span 8;
+        }
+        .credit-image{
+            grid-column: 1 / span 9;
+            grid-row: 13 / span 11;
+            max-width: 392px;
+            aspect-ratio: 392 / 554;
+        }
+        .auto-credit-image{
+            grid-column: 11 / span 6;
+            grid-row: 21 / span 7;
+            max-width: 263px;
+            aspect-ratio: 263 / 371;
+            margin-top: -20px;
+        }
+        .part-tags{
+            grid-column: 11 / span 4;
+            grid-row: 18 / span 2;
+            min-width: 165px;
+        }
+        @media all and (max-width: 960px){
+            .part-id{
+                grid-column: 2 / span 4;
+            }
+            .brand-description{
+                grid-column: 7 / span 14;
+                padding-right: 15px;
+            }
+            .man-deposit-image{
+                grid-column: 21 / span 9;
+            }
+            .deposit-image{
+                grid-row: 11 / span 6;
+            }
+            .product-description{
+                grid-column: 20 / -1;
+                .part-description{
+                    max-width: 260px;
+                }
+            }
+            .auto-credit-image{
+                margin: 0;
+            }
+        }
+        @media all and (max-width: 650px){
+            .part-id{
+                grid-column: 1 / span 4;
+                margin: 0;
+            }
+            .brand-description{
+                grid-column: 7 / span 15;
+                padding-right: 15px;
+            }
+            .man-deposit-image{
+                grid-column: 22 / span 9;
+            }
+        }
+        @media all and (max-width: 500px){
+            .brand-description{
+                grid-column: 7 / span 16;
+                .part-description{
+                    margin-left: -20px;
+                }
+            }
+            .man-deposit-image{
+                grid-column: 23 / -1;
+            }
+            .product-description{
+                grid-row: 17 / span 12;
+            }
+        }
+        @media all and (max-width: 450px){
+            .brand-description{
+                grid-row: 1 / span 8;
+                grid-column: 6 / -1;
+                .part-description{
+                    margin-left: -50px;
+                    max-width: 250px;
+                }
+            }
+            .credit-image{
+                grid-row: 10 / span 9;
+            }
+            .part-tags{
+                grid-column: 1 / span 7;
+                grid-row: 20 / span 3;
+            }
+            .deposit-image{
+                grid-column: 16 / span 5;
+                grid-row: 10 / span 5;
+            }
+            .auto-credit-image{
+                grid-row: 16 / span 6;
+            }
+        }
+        @media all and (max-width: 400px){
+            .brand-description{
+                grid-column: 7 / -1;
+                .part-description{
+                    margin-left: -50px;
+                    max-width: 200px;
+                }
+            }
+            .man-deposit-image{
+                grid-row: 4 / span 7;
+            }
+            .credit-image{
+                grid-row: 10 / span 9;
+            }
+            .part-tags{
+                grid-row: 19 / span 3;
+            }
+            .deposit-image{
+                grid-row: 10 / span 5;
+            }
+            .auto-credit-image{
+                grid-row: 15 / span 6;
+            }
+            .product-description{
+                grid-column: 19 / -1;
+                grid-row: 15 / span 13;
+            }
+        }
+    }
+
+    .image-communication{
+        .part-description-block{
+            grid-column: 3 / span 14;
+            grid-row: 1 / span 6;
+            margin-top: 25px;
+        }
+        .zsu-image{
+            grid-column: 1 / span 10;
+            grid-row: 9 / span 13;
+            max-width: 440px;
+            aspect-ratio: 440 / 620;
+            margin-top: 20px;
+        }
+        .poruch-image{
+            grid-column: span 12 / -1;
+            justify-self: end;
+            grid-row: 1 / span 15;
+            max-width: 530px;
+            aspect-ratio: 530 / 750;
+        }
+        .service-image{
+            grid-column: 13 / span 9;
+            grid-row: 17 / span 11;
+            max-width: 380px;
+            aspect-ratio: 380 / 536;
+        }
+        .part-tags{
+            grid-column: 13 / span 4;
+            grid-row: 14 / span 2;
+            min-width: 170px;
+        }
+        @media all and (max-width: 1100px) {
+            .zsu-image{
+                grid-row: 11 / span 13;
+                margin-top: 0px;
+            }
+        }
+        @media all and (max-width: 960px) {
+            .part-description-block{
+                grid-column: 3 / span 15;
+                grid-row: 2 / span 8;
+                margin-top: 0;
+            }
+            .zsu-image{
+                grid-row: 12 / span 12;
+            }
+            .service-image{
+                grid-row: 19 / span 11;
+            }
+            .part-tags{
+                grid-row: 16 / span 2;
+            }
+        }
+        @media all and (max-width: 650px) {
+            .zsu-image{
+                grid-row: 13 / span 12;
+            }
+            .service-image{
+                grid-row: 20 / span 11;
+                grid-column: 14 / span 9;
+            }
+            .part-tags{
+                grid-row: 17 / span 3;
+                grid-column: 14 / span 6;
+            }
+        }
+        @media all and (max-width: 500px) {
+            .service-image{
+                grid-row: 20 / span 9;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-description-block{
+                grid-row: 1 / span 12;
+            }
+            .zsu-image{
+                grid-row: 15 / span 7;
+            }
+            .poruch-image{
+                grid-row: 3 / span 9;
+            }
+            .part-tags{
+                grid-row: 16 / span 3;
+                grid-column: 16 / span 10;
+            }
+        }
+        @media all and (max-width: 390px){
+            .service-image{
+                grid-row: 20 / span 7;
+            }
+        }
+    }
+
+    .digital-communication{
+        .part-description-block{
+            grid-column: 19 / span 11;
+            grid-row: 4 / span 7;
+            margin-top: -10px;
+        }
+        .digital-image{
+            grid-column: 5 / span 12;
+            grid-row: 1 / span 6;
+            max-width: 537px;
+            aspect-ratio: 537 / 264;
+        }
+        .didgest-image{
+            grid-column: 1 / span 6;
+            grid-row: 7 / span 6;
+            max-width: 246px;
+            aspect-ratio: 246 / 308;
+        }
+        .work-image{
+            grid-column: 8 / span 7;
+            grid-row: 9 / span 8;
+            max-width: 294px;
+            aspect-ratio: 294 / 368;
+        }
+        .cashback-image{
+            grid-column: 19 / span 6;
+            grid-row: 13 / span 6;
+            max-width: 270px;
+            aspect-ratio: 1 / 1;
+        }
+        .zsu-green-image{
+            grid-column: span 6 / -1;
+            justify-self: end;
+            grid-row: 12 / span 10;
+            max-width: 270px;
+            aspect-ratio: 270 / 480;
+        }
+        .part-tags{
+            grid-column: 8 / span 5;
+            grid-row: 18 / span 2;
+            margin-top: -30px;
+            min-width: 190px;
+        }
+        @media all and (max-width: 1100px){
+            .cashback-image{
+                grid-row: 14 / span 5;
+            }
+            .zsu-green-image{
+                grid-row: 13 / span 9;
+            }
+        }
+        @media all and (max-width: 960px){
+            .part-description-block{
+                grid-column: 19 / -1;
+                grid-row: 3 / span 9;
+                margin-top: 0;
+                .part-description{
+                    max-width: 300px;
+                }
+            }
+        }
+        @media all and (max-width: 650px){
+            .digital-image{
+                grid-column: 4 / span 12;
+            }
+            .part-description-block{
+                grid-column: 18 / -1;
+                .part-description{
+                    max-width: 250px;
+                }
+            }
+            .cashback-image{
+                grid-row: 15 / span 5;
+            }
+            .zsu-green-image{
+                grid-row: 14 / span 9;
+            }
+        }
+        @media all and (max-width: 500px){
+            .digital-image{
+                grid-column: 3 / span 12;
+            }
+            .part-description-block{
+                grid-column: 17 / -1;
+            }
+            .part-tags{
+                grid-column: 8 / span 8;
+                grid-row: 16 / span 2;
+                margin-top: 10px;
+                min-width: 120px;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-description-block{
+                grid-column: 18 / -1;
+                grid-row: 1 / span 13;
+            }
+            .digital-image{
+                grid-column: 4 / span 12;
+                grid-row: 3 / span 3;
+            }
+            .didgest-image{
+                grid-row-start: 8;
+            }
+            .part-tags{
+                grid-column: 3 / span 12;
+                grid-row: 15 / span 3;
+                margin: 0;
+            }
+            .cashback-image{
+                grid-row: 13 / span 4;
+            }
+            .zsu-green-image{
+                grid-row: 12 / span 7;
+            }
+        }
+        @media all and (max-width: 375px){
+            .part-tags{
+                grid-row: 14 / span 3;
+                margin-top: 10px;
+            }
+            .cashback-image{
+                grid-row: 16 / span 3;
+            }
+            .zsu-green-image{
+                grid-row: 15 / span 6;
+            }
+        }
+    }
+
+    .everyday-touchpoints{
+        .part-id{
+            grid-column: 3 / span 3;
+            grid-row: 3 / span 2;
+        }
+        .touchpoints-description{
+            grid-column: 7 / span 10;
+            grid-row: 3 / span 7;
+            margin-top: 20px;
+        }
+        .interior-image{
+            grid-column: span 14 / -1;
+            justify-self: end;
+            grid-row: 1 / span 8;
+            max-width: 638px;
+            aspect-ratio: 638 / 414;
+        }
+        .man-image{
+            grid-column: 14 / span 10;
+            grid-row: 10 / span 5;
+            max-width: 430px;
+            aspect-ratio: 430 / 240;
+        }
+        .apparel-description{
+            grid-column: 19 / span 11;
+            grid-row: 17 / span 3;
+        }
+        .person-image{
+            grid-column: 2 / span 10;
+            grid-row: span 9 / 22;
+            align-self: end;
+            max-width: 423px;
+            aspect-ratio: 423 / 447;
+        }
+        .part-tags{
+            grid-column: 13 / span 3;
+            grid-row: span 3 / 22;
+            align-self: end;
+            min-width: 150px;
+        }
+        @media all and (max-width: 1100px){
+            .man-image{
+                grid-row: 11 / span 5;
+            }
+            .touchpoints-description{
+                grid-column: 7 / span 11;
+                .part-description{
+                    max-width: 300px;
+                }
+            }
+        }
+        @media all and (max-width: 960px){
+            .part-id{
+                grid-column: 2 / span 4;
+                grid-row: 2 / span 2;
+            }
+            .touchpoints-description{
+                grid-column: 6 / span 12;
+                grid-row: 2 / span 7;
+                margin-left: 15px;
+                padding-right: 20px;
+                .part-description{
+                    margin-left: -40px;
+                }
+            }
+            .apparel-description{
+                grid-column: 19 / -2;
+            }
+            .man-image{
+                margin-top: 10px;
+            }
+        }
+        @media all and (max-width: 650px){
+            .part-id{
+                grid-column: 1 / span 4;
+            }
+            .touchpoints-description{
+                grid-column: 5 / span 13;
+                .part-description{
+                    margin-left: -50px;
+                }
+            }
+            .interior-image{
+                grid-column: span 13 / -1;
+            }
+            .person-image{
+                grid-column: 1 / span 10;
+            }
+            .part-tags{
+                grid-column: 12 / span 3;
+                min-width: 120px;
+            }
+            .man-image{
+                grid-column: 17 / span 10;
+            }
+            .apparel-description{
+                grid-column: 19 / -1;
+            }
+        }
+        @media all and (max-width: 500px){
+            .apparel-description{
+                grid-column: 20 / -1;
+            }
+            .touchpoints-description{
+                padding: 0;
+                margin-left: 25px;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-id{
+                grid-row-start: 1;
+            }
+            .touchpoints-description{
+                grid-column: 7 / span 10;
+                grid-row: 1 / span 10;
+                margin: 0;
+            }
+            .interior-image{
+                grid-column: span 14 / -1;
+            }
+            .man-image{
+                grid-row: 8 / span 3;
+                margin: 0;
+                grid-column: span 10 / -3;
+            }
+            .person-image{
+                grid-row: 13 / span 5;
+            }
+            .apparel-description{
+                grid-row: 13 / span 5;
+                grid-column: 15 / -2;
+            }
+            .part-tags{
+                grid-column: 8 / span 9;
+                grid-row: 19 / span 3;
+            }
+        }
+        @media all and (max-width: 400px){
+            .man-image{
+                grid-row: 7 / span 3;
+            }
+        }
+    }
+
+    .system-action{
+        .part-id-description-block{
+            grid-column: 13 / -1;
+            grid-row: span 2 / 3;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            gap: 15px;
+        }
+        .part-id{
+            transform: translateY(12%);
+            margin-left: 15px;
+        }
+        .system-description{
+            flex-grow: 1;
+            .part-subtitle{
+                margin: 0;
+            }
+        }
+        .interior-big-image{
+            grid-column: 1 / -1;
+            grid-row: 4 / span 11;
+            max-width: 1360px;
+            aspect-ratio: 1360 / 550;
+            margin-top: 25px;
+        }
+        .action-description{
+            grid-column: 14 / span 16;
+            grid-row: 17 / span 3;
+        }
+        .part-tags{
+            grid-column: 1 / span 4;
+            grid-row: 16 / span 2;
+            min-width: 170px;
+        }
+        @media all and (max-width: 650px){
+            .part-id-description-block{
+                grid-column-start: 12;
+                grid-row: 1 / span 3;
+            }
+            .action-description{
+                grid-row: 17 / span 4;
+            }
+        }
+        @media all and (max-width: 500px){
+            .part-id-description-block{
+                grid-column-start: 9;
+            }
+            .action-description{
+                grid-column: 14 / -1;
+            }
+        }
+        @media all and (max-width: 450px){
+            .part-id-description-block{
+                align-items: flex-start;
+                grid-row: 1 / span 4;
+            }
+            .part-id{
+                transform: translateY(0);
+            }
+            .interior-big-image{
+                margin: 0;
+            }
+            .part-tags{
+                grid-row: 13 / span 3;
+            }
+            .action-description{
+                grid-row: 14 / span 4;
+            }
+        }
+        @media all and (max-width: 400px){
+            .interior-big-image{
+                grid-row-start: 5;
+            }
+        }
+        @media all and (max-width: 350px){
+            .part-tags{
+                grid-row: 12 / span 3;
+            }
+            .action-description{
+                grid-row: 13 / span 4;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+
+const {media, title, date, description} = Astro.props;
+---
+
+<div class="hero">
+    <Image src={media} alt="Hero image" />
+    <div class="hero-text">
+        <div class="hero-title">
+            {title.map((string: string) => <>{string} <br /></>)}
+        </div>
+        <div class="hero-date">
+            {date}
+        </div>
+        <div class="hero-description">
+             {description.join(" | ")}
+        </div>
+    </div>
+</div>
+
+<style>
+    .hero{
+        width: 100%;
+        margin-bottom: 150px;
+        position: relative;
+        padding: 40px 80px;
+        aspect-ratio: 1360 / 600;
+        clip-path: url("../assets/heroClip.svg#heroClip");
+        @media all and (max-width: 960px){
+            margin-bottom: 100px;
+            padding: 40px 50px;
+        }
+        @media all and (max-width: 768px){
+            margin-bottom: 60px;
+            padding: 30px;
+        }
+        @media all and (max-width: 600px){
+            margin-bottom: 50px;
+            padding: 25px 10px 20px 20px;
+        }
+        @media all and (max-width: 400px){
+            padding: 10px;
+        }
+        @media all and (max-width: 350px){
+            padding: 5px;
+        }
+    }
+
+    .hero > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+    }
+
+    .hero-text{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 10px;
+        @media all and (max-width: 600px){
+            gap: 5px;
+        }
+    }
+    .hero-title{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 4.85rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        @media all and (max-width: 960px){
+            font-size: 4rem;
+        }
+        @media all and (max-width: 768px){
+            font-size: 3.5rem;
+        }
+        @media all and (max-width: 500px){
+            font-size: 3rem;
+        }
+        @media all and (max-width: 350px){
+            font-size: 2.8rem;
+        }
+    }
+    .hero-date{
+        font-family: 'Mulish', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    .hero-description{
+        font-family: 'Mulish', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.2;
+        @media all and (max-width: 768px){
+            font-size: 12px;
+        }
+        @media all and (max-width: 350px){
+            font-size: 10px;
+        }
+    }
+</style>

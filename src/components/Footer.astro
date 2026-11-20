@@ -1,0 +1,230 @@
+---
+import Logo from "../assets/logo.svg";
+import { ui } from "../i18n/ui.js";
+
+const currentLang = (Astro.currentLocale || "uk") as keyof typeof ui;
+
+const date = new Date().getFullYear();
+---
+
+<footer>
+    <div id="contact">
+        <div class="slogan">
+            <p>{ui[currentLang]["footer.question"]}</p>
+            <a href="mailto:alatriand@gmail.com" class="with-arrow" style="--arrow-offset-y: 10px" target="_blank">{ui[currentLang]["footer.call"]}</a>
+        </div>
+        <div class="info">
+            <div class="left-side">
+                <ul>
+                <li>© {date} alex martyniuk</li>
+                <li>
+                    <a href="mailto:alatriand@gmail.com" class="arrow-link" target="_blank">
+                        alatriand@gmail.com
+                        <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path id="arrow-line" d="M.4964 3.1592C.2203 3.2322-.0019 3.4576 0 3.6592 0 4 .35 4.2.5036 4.1592L.5 3.6592.4964 3.1592ZM.5 3.6592.5036 4.1592 10.5036 4.1592 10.5 3.6592 10.4964 3.1592.4964 3.1592.5 3.6592Z" fill="white"/>
+                            <path id="arrow-head" d="M10.8561 4.01021C11.0499 3.81357 11.0477 3.49699 10.851 3.30312L7.64653 0.143829C7.44988 -0.0500409 7.13331 -0.0477918 6.93944 0.148853C6.74557 0.345497 6.74782 0.662072 6.94446 0.855942L9.79291 3.6642L6.98465 6.51265C6.79078 6.7093 6.79303 7.02587 6.98967 7.21974C7.18632 7.41361 7.50289 7.41136 7.69676 7.21472L10.8561 4.01021Z" fill="white"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            </div>
+            <div class="right-side">
+                <ul>
+                    <li>
+                        <a href="http://biletskyi.dev" class="arrow-link" target="_blank">
+                            dev - anton biletskyi
+                            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="arrow-line" d="M.4964 3.1592C.2203 3.2322-.0019 3.4576 0 3.6592 0 4 .35 4.2.5036 4.1592L.5 3.6592.4964 3.1592ZM.5 3.6592.5036 4.1592 10.5036 4.1592 10.5 3.6592 10.4964 3.1592.4964 3.1592.5 3.6592Z" fill="white"/>
+                                <path id="arrow-head" d="M10.8561 4.01021C11.0499 3.81357 11.0477 3.49699 10.851 3.30312L7.64653 0.143829C7.44988 -0.0500409 7.13331 -0.0477918 6.93944 0.148853C6.74557 0.345497 6.74782 0.662072 6.94446 0.855942L9.79291 3.6642L6.98465 6.51265C6.79078 6.7093 6.79303 7.02587 6.98967 7.21974C7.18632 7.41361 7.50289 7.41136 7.69676 7.21472L10.8561 4.01021Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="to-top">
+                            back to top
+                            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path id="arrow-line" d="M.4964 3.1592C.2203 3.2322-.0019 3.4576 0 3.6592 0 4 .35 4.2.5036 4.1592L.5 3.6592.4964 3.1592ZM.5 3.6592.5036 4.1592 10.5036 4.1592 10.5 3.6592 10.4964 3.1592.4964 3.1592.5 3.6592Z" fill="white"/>
+                                    <path id="arrow-head" d="M10.8561 4.01021C11.0499 3.81357 11.0477 3.49699 10.851 3.30312L7.64653 0.143829C7.44988 -0.0500409 7.13331 -0.0477918 6.93944 0.148853C6.74557 0.345497 6.74782 0.662072 6.94446 0.855942L9.79291 3.6642L6.98465 6.51265C6.79078 6.7093 6.79303 7.02587 6.98967 7.21974C7.18632 7.41361 7.50289 7.41136 7.69676 7.21472L10.8561 4.01021Z" fill="white"/>
+                                </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
+        <Logo />
+    </div>
+</footer>
+
+<style>
+    #contact{
+        width: 100%;
+        max-width: 1360px;
+        margin: 0 auto;
+        background-color: #640000;
+        padding: 70px 84px 80px;
+        border-radius: 10px;
+        clip-path: url("../assets/footerClip.svg#footerClip");
+        @media all and (max-width: 1200px){
+            padding: 50px 50px 60px;
+        }
+        @media all and (max-width: 960px){
+            padding: 40px 40px 30px;
+        }
+        @media all and (max-width: 600px){
+            padding: 20px 25px 25px;
+        }
+    }
+    .slogan{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 4.875rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        margin-bottom: 56px;
+        @media all and (max-width: 768px){
+            margin-bottom: 50px;
+        }
+        @media all and (max-width: 600px){
+            font-size: 3.75rem;
+        }
+        @media all and (max-width: 400px){
+            font-size: 3.25rem;
+            margin-bottom: 30px;
+        }
+        & a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    .info{
+        font-family: 'Mulish', sans-serif;
+        font-weight: 400;
+        font-size: 1.375rem;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        & > div{
+            display: contents;
+        }
+        ul{
+            list-style: none;
+            display: contents;
+            align-items: center;
+            justify-content: space-between;
+        }
+        a{
+            color: inherit;
+        }
+        @media all and (max-width: 960px){
+            & > div{
+                display: block;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-end;
+            }
+            .left-side ul{
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+        }
+        @media all and (max-width: 768px){
+            font-size: 1.6rem;
+        }
+        @media all and (max-width: 600px){
+            font-size: 2rem;
+            ul{
+                gap: 10px;
+            }
+        }
+        @media all and (max-width: 500px){
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            & > div{
+                display: contents;
+            }
+            ul{
+                display: contents;
+            }
+        }
+        @media all and (max-width: 400px){
+            font-size: 1.75rem;
+        }
+    }
+    .logo{
+        margin: 0 auto;
+        width: 10%;
+        max-width: 77px;
+    }
+    .arrow-link{
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        text-decoration: none;
+        & > svg{
+            rotate: -45deg;
+            overflow: visible;
+        }
+        #arrow-line, #arrow-head{
+            transition: all 0.4s;
+        }
+        &:hover{
+            #arrow-line{
+                transform: scaleX(1.6);
+            }
+            #arrow-head{
+                transform: translateX(6px);
+            }
+        }
+    }
+    .to-top{
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        text-decoration: none;
+        & > svg{
+            rotate: -90deg;
+            overflow: visible;
+            translate: 0 -2px;
+        }
+        #arrow-line, #arrow-head{
+            transition: all 0.4s;
+        }
+        &:hover{
+            #arrow-line{
+                transform: scaleX(1.4);
+            }
+            #arrow-head{
+                transform: translateX(5px);
+            }
+        }
+    }
+    html[lang="uk"]{
+        @media all and (max-width: 400px){
+            #contact{
+                padding: 20px;
+                .slogan{
+                    font-size: 3.2rem;
+                }
+            }
+        }
+    }
+</style>
+
+<script>
+    const toTop = document.querySelector(".to-top");
+    toTop?.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+        history.replaceState(null, "", location.pathname + location.search);
+    });
+</script>

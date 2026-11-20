@@ -1,0 +1,320 @@
+---
+import { Image } from 'astro:assets';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+import emotionsImage from "../assets/images/emotions.jpg";
+import typographyImage from "../assets/images/typography.jpg";
+import dynamicImage from "../assets/images/dynamic.png";
+
+import video from "../assets/video/about_video.mp4";
+const slogan = ["створюю", "візуальний голос", "брендів"];
+const textLeft = ["бренди", "ідеї", "візуальні системи", "люди", "вплив"];
+const textRight = ["типографіка", "зображення", "анімація"];
+---
+
+<BaseLayout
+    title="Про мене"
+    description="Alex Martyniuk is a Ukrainian designer and art director specializing in brand identity, visual systems, and spatial design. With a keen eye for detail and a passion for creating meaningful experiences, Alex helps brands connect with their audiences through thoughtful design solutions."
+    og={{
+        title: "Alex Martyniuk - Designer & Art Director",
+        image: "https://example.com/og-image.jpg",
+    }}
+>
+    <PageHero media={video} slogan={slogan} textLeft={textLeft} textRight={textRight} />
+    <div class="info-blocks">
+        <div class="text summary-text">
+            Працюю з брендингом, айдентикою та візуальною комунікацією — від початкової ідеї до цілісної системи, що втілюється в digital, друці, пакуванні, анімації та вебі
+        </div>
+        <div class="info-emotions-block">
+            <div class="info-emotions-image">
+                <Image src={emotionsImage} alt="people, emotions, stories image" />
+            </div>
+            <div class="description info-emotions-description">
+                люди<br />
+                емоції<br />
+                історії
+            </div>
+        </div>
+        <div class="text expirience-text">
+            Досвід роботи в креативних агенціях та in-house командах навчив мене мислити ширше за окремі дизайн-рішення. Я зосереджуюся на розумінні задачі, пошуку сильної візуальної ідеї та побудові системи, яка залишається цілісною й упізнаваною в різних форматах
+        </div>
+        <div class="info-typography-block">
+            <div class="info-typography-image">
+                <Image src={typographyImage} alt="typography, color, composition image" />
+            </div>
+            <div class="description info-typography-description">
+                типографіка<br />
+                колір<br />
+                композиція
+            </div>
+        </div>
+        <div class="text approach-text">
+            Мені близькі сильна композиція, типографіка, колір і виразні образи. У своїй роботі я поєдную концептуальне мислення, увагу до деталей і глибоке розуміння виробничих процесів
+        </div>
+        <div class="info-dynamic-block">
+            <div class="info-dynamic-image">
+                <Image src={dynamicImage} alt="function, dynamic, result image" />
+            </div>
+            <div class="description info-dynamic-description">
+                функція<br />
+                динаміка<br />
+                результат
+            </div>
+        </div>
+        <div class="slogan">
+            <p>для мене хороший дизайн — не декор.</p>
+            <p>це характер, логіка та ідеї, що працюють разом</p>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .info-blocks{
+        width: 100%;
+        margin-bottom: 150px;
+        display: grid;
+        grid-template-columns: repeat(20, minmax(0, 1fr));
+        grid-auto-rows: clamp(20px, 3.7vw, 50px);
+        @media all and (max-width: 960px){
+            margin-bottom: 100px;
+        }
+        @media all and (max-width: 768px){
+            margin-bottom: 60px;
+        }
+        @media all and (max-width: 450px){
+            margin-bottom: 50px;
+        }
+    }
+    .text{
+        font-family: 'Mulish', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    .description{
+        font-family: 'Mulish', sans-serif;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    .slogan{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 3rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        grid-column: 2 / -1;
+        grid-row: 19 / span 2;
+    }
+
+    .summary-text{
+        grid-column: 2 / span 6;
+        grid-row-start: 1;
+        max-width: 360px;
+    }
+    .expirience-text{
+        grid-column: 14 / -1;
+        grid-row-start: 1;
+        max-width: 380px;
+    }
+    .approach-text{
+        grid-column: 7 / span 6;
+        grid-row-start: 12;
+        max-width: 325px;
+        margin-left: 20px;
+    }
+    .info-emotions-block{
+        grid-column: 9 / span 4;
+        grid-row: 2 / span 6;
+        justify-self: center;
+        .info-emotions-image{
+            max-width: 200px;
+            aspect-ratio: 200 / 200;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .info-typography-block{
+        grid-column: 1 / span 6;
+        grid-row: 6 / span 6;
+        .info-typography-image{
+            max-width: 360px;
+            aspect-ratio: 360 / 270;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .info-dynamic-block{
+        grid-column: 13 / -1;
+        grid-row: 7 / span 8;
+        display: flex;
+        align-items: flex-end;
+        .info-dynamic-image{
+            max-width: 424px;
+            aspect-ratio: 424 / 377;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-right: 40px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    @media all and (max-width: 1300px){
+        .slogan{
+            grid-row-start: 18;
+        }
+        .info-dynamic-block{
+            grid-column-start: 14;
+            grid-row: 7 / span 6;
+        }
+    }
+    @media all and (max-width: 1100px){
+        .slogan{
+            grid-row-start: 19;
+        }
+        .info-typography-block{
+            grid-row-start: 7;
+        }
+        .approach-text{
+            grid-row-start: 13;
+        }
+    }
+    @media all and (max-width: 960px){
+        .slogan{
+            grid-row-start: 20;
+        }
+        .approach-text{
+            grid-column: 7 / span 7;
+        }
+        .text{
+            font-size: 1.4rem;
+        }
+    }
+    @media all and (max-width: 850px){
+        .approach-text{
+            grid-row-start: 14;
+        }
+        .info-typography-block{
+            grid-row-start: 8;
+        }
+        .info-dynamic-block{
+            grid-row-start: 8;
+        }
+        .slogan{
+            grid-row-start: 22;
+        }
+    }
+    @media all and (max-width: 768px){
+        .info-blocks{
+            grid-template-columns: repeat(10, minmax(0, 1fr));
+        }
+        .text{
+            font-size: 1.6rem;
+        }
+        .description{
+            font-size: 14px;
+        }
+        .summary-text{
+            grid-column: 2 / span 4;
+            max-width: 250px;
+        }
+        .info-emotions-block{
+            grid-column: 7 / span 3;
+            .info-emotions-image{
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+        }
+        .info-typography-block{
+            grid-column: 1 / span 5;
+            .info-typography-image{
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+        }
+        .expirience-text{
+            grid-row-start: 23;
+            grid-column: 2 / span 4;
+        }
+        .approach-text{
+            grid-row-start: 16;
+            grid-column: -1 / 6;
+            max-width: 250px;
+            margin-left: 25px;
+        }
+        .info-dynamic-block{
+            grid-row: 23 / span 12;
+            grid-column: 7 / span 4;
+            flex-direction: column;
+            align-items: flex-start;
+            .info-dynamic-image{
+                margin: 0 0 20px;
+                border-radius: 10px;
+            }
+        }
+        .slogan{
+            grid-row: 36 / span 3;
+        }
+    }
+    @media all and (max-width: 600px) {
+        .text{
+            font-size: 1.8rem;
+        }
+        .description{
+            font-size: 12px;
+        }
+        .info-typography-block{
+            grid-row-start: 9;
+        }
+        .info-dynamic-block{
+            grid-row-start: 24;
+        }
+        .slogan{
+            grid-row-start: 37;
+        }
+    }
+    @media all and (max-width: 450px) {
+        .summary-text{
+            grid-column: 1 / span 5;
+        }
+        .info-typography-block{
+            grid-row-start: 11;
+        }
+        .info-dynamic-block{
+            grid-row-start: 28;
+            grid-column: 8 / span 3;
+        }
+        .slogan{
+            grid-row: 41 / span 4;
+            grid-column: 1 / -1;
+        }
+        .expirience-text{
+            grid-row-start: 29;
+            grid-column: 1 / span 6;
+        }
+        .info-emotions-block{
+            grid-column: -1 / 7;
+        }
+        .approach-text{
+            grid-column: 5 / -1;
+            grid-row-start: 19;
+            margin: 0;
+        }
+    }
+</style>

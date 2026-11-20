@@ -1,0 +1,363 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+import Logo from "../assets/logo.svg";
+import { ui } from "../i18n/ui.js";
+import { routes } from "../i18n/routes.js";
+
+import { linkbuilder } from "../assets/utils/linkbuilder.js";
+
+const currentLang = (Astro.currentLocale || "uk") as keyof typeof ui;
+
+const { targetUrl, currentPage } = linkbuilder(currentLang, Astro.url.pathname);
+---
+
+<header>
+    <div class="container">
+        <a href={getRelativeLocaleUrl(currentLang)} class="title">
+            <p class="name">alex martyniuk</p>
+            <p class="name name-mobile">alex mart</p>
+            <p class="role">senior brand & visual designer</p>
+        </a>
+        <div class="logo">
+            <a href={getRelativeLocaleUrl(currentLang)}>
+                <Logo />
+            </a>
+        </div>
+        <nav class="top-menu">
+            <ul class="menu">
+                <li>
+                    <a href={getRelativeLocaleUrl(currentLang, routes.about[currentLang])} class={routes.about[currentLang] === currentPage ? "active" : ""}>
+                        {ui[currentLang]["nav.about"]}                        
+                    </a>
+                </li>
+                <li>
+                    <a href={getRelativeLocaleUrl(currentLang, routes.work[currentLang])} class={routes.work[currentLang] === currentPage ? "active" : ""}>
+                        {ui[currentLang]["nav.work"]}                        
+                    </a>
+                </li>
+                <li>
+                    <a href={getRelativeLocaleUrl(currentLang, routes.expertise[currentLang])} class={routes.expertise[currentLang] === currentPage ? "active" : ""}>
+                        {ui[currentLang]["nav.expertise"]}                        
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        {ui[currentLang]["nav.contact"]}                        
+                    </a>
+                </li>
+            </ul>
+            <div class="langswitcher">
+                <ul>
+                    <li><a href={currentLang === "uk" ? "" : targetUrl} class={currentLang === "uk" ? "active" : ""}><span>ua</span></a></li>
+                    <li><span>|</span></li>
+                    <li><a href={currentLang === "en" ? "" : targetUrl} class={currentLang === "en" ? "active" : ""}><span>en</span></a></li>
+                </ul>
+            </div>
+            <div class="menu-icon">
+                <svg class="burger" viewBox="20 20 60 60" width="0%" height="0%">
+                    <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                    <path class="line middle" d="m 30,50 h 40" />
+                    <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+                </svg>
+            </div>
+            <ul class="mobile-menu">
+                <li>
+                    <a href={getRelativeLocaleUrl(currentLang, routes.about[currentLang])} class={routes.about[currentLang] === currentPage ? "active" : ""}>
+                        {ui[currentLang]["nav.about"]}                        
+                    </a>
+                </li>
+                <li>
+                    <a href={getRelativeLocaleUrl(currentLang, routes.work[currentLang])} class={routes.work[currentLang] === currentPage ? "active" : ""}>
+                        {ui[currentLang]["nav.work"]}                        
+                    </a>
+                </li>
+                <li>
+                    <a href={getRelativeLocaleUrl(currentLang, routes.expertise[currentLang])} class={routes.expertise[currentLang] === currentPage ? "active" : ""}>
+                        {ui[currentLang]["nav.expertise"]}                        
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        {ui[currentLang]["nav.contact"]}                        
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .container{
+        width: 100%;
+        max-width: 1360px;
+        margin: 0 auto 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media all and (max-width: 960px){
+            margin-bottom: 20px;
+        }
+        @media all and (max-width: 500px){
+            align-items: flex-end;
+            margin-bottom: 15px;
+        }
+    }
+    .title{
+        flex: 1 1 40%;
+        text-decoration: none;
+        color: inherit;
+        .name{
+            font-family: 'Science Gothic', sans-serif;
+            line-height: 1;
+            font-size: 3.7rem;
+            font-width: extra-condensed;
+            font-stretch: extra-condensed;
+        }
+        .name-mobile{
+            display: none;
+        }
+        .role{
+            font-family: 'Mulish', sans-serif;
+            font-weight: 500;
+            font-size: 1.45rem;
+            line-height: 1.2;
+        }
+        @media all and (max-width: 960px){
+            flex-grow: 0;
+        }
+        @media all and (max-width: 500px){
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            .name{
+                display: none;
+            }
+            .name-mobile{
+                display: block;
+                font-size: 2.5rem;
+            }
+            .role{
+                font-size: 1.75rem;
+            }
+        }
+        @media all and (max-width: 400px){
+            flex: 0 1 42%;
+            .name-mobile{
+                font-size: 2.1rem;
+            }
+            .role{
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .logo{
+        flex: 0 1 10%;
+        max-width: 112px;
+        text-align: center;
+        line-height: 0;
+    }
+    .top-menu{
+        display: flex;
+        align-items: center;
+        column-gap: 30px;
+        flex: 1 1 40%;
+        justify-content: flex-end;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: white;
+        .menu{
+            list-style: none;
+            display: flex;
+            column-gap: 30px;
+            a{
+                text-decoration: none;
+                color: inherit;
+                vertical-align: text-top;
+                display: inline-block;
+                transition: all 0.4s;
+                &:hover{
+                    transform: scale(1.15);
+                }
+            }
+        }
+        @media all and (max-width: 1200px){
+            column-gap: 20px;
+            .menu{
+                column-gap: 20px;
+            }
+        }
+        @media all and (max-width: 960px){
+            flex-grow: 0;
+            font-size: 16px;
+            align-self: center;
+            .menu{
+                display: none;
+            }
+        }
+        @media all and (max-width: 400px){
+            flex: 0 1 42%;
+            column-gap: 5px;
+        }
+    }
+    html[lang="uk"] .top-menu{
+        font-size: 1.45rem;
+        column-gap: 22px;
+        .menu{
+            column-gap: 22px;
+        }
+        @media all and (max-width: 1100px){
+            font-size: 1.4rem;
+            column-gap: 13px;
+            .menu{
+                column-gap: 13px;
+            }
+        }
+        @media all and (max-width: 960px){
+            .langswitcher{
+                font-size: 16px;
+            }
+        }
+    }
+    .menu-icon {
+        line-height: 0;
+        position: relative;
+        display: none;
+        z-index: 10;
+        width: 100%;
+        max-width: 35px;
+        margin-left: 10px;
+        .burger {
+            cursor: pointer;
+            transition: transform 400ms;
+            user-select: none;
+            -webkit-user-select: none;
+            width: 100%;
+            height: 100%;
+        }
+        .burger.active {
+            transform: rotate(45deg);
+        }
+        .burger.active .line {
+            stroke: white;
+        }
+        .burger.active .top {
+            stroke-dashoffset: -64px;
+        }
+        .burger.active .middle {
+            transform: rotate(90deg);
+        }
+        .burger.active .bottom {
+            stroke-dashoffset: -64px;
+        }
+        .burger .line {
+            fill: none;
+            transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+            stroke: white;
+            stroke-width: 4;
+            stroke-linecap: round;
+        }
+        .burger .top {
+            stroke-dasharray: 40 160;
+        }
+        .burger .middle {
+            stroke-dasharray: 40 142;
+            transform-origin: 83% 83%;
+            transition: transform 400ms;
+        }
+        .burger .bottom {
+            stroke-dasharray: 40 85;
+            transform-origin: 50%;
+            transition: transform 400ms, stroke-dashoffset 400ms;
+        }
+        @media all and (max-width: 960px){
+            display: block;
+        }
+    }
+    .langswitcher{
+        ul{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            @media all and (max-width: 400px){
+                gap: 8px;
+            }
+        }
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+        span{
+            vertical-align: text-top;
+        }
+    }
+    .mobile-menu{
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        list-style: none;
+        font-size: 3rem;
+        opacity: 0.5;
+        transform: translateY(-150%);
+        transition: all 0.25s;
+        &.active{
+            transform: translateY(0);
+            opacity: 1;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        @media all and (min-width: 961px){
+            display: none;
+        }
+    }
+    a.active{
+        color: #640000 !important;
+        font-weight: 800;
+        transform: scale(1.08);
+        & > span{
+            color: #640000;
+        }
+    }
+</style>
+
+<script>
+    function toggleMobileMenu() {
+        document.querySelector(".burger")?.classList.toggle("active");
+        document.querySelector(".mobile-menu")?.classList.toggle("active");
+        document.querySelector("body")?.classList.toggle("locked");
+    }
+    document.querySelector(".menu-icon")?.addEventListener("click", () => {
+        toggleMobileMenu();
+    });
+    document.querySelectorAll(".mobile-menu li").forEach((link) => {
+        link.addEventListener("click", () => {
+            toggleMobileMenu();
+        });
+    });
+
+    const link = document.querySelector("a[href='#contact']");
+    const contactSection = document.querySelector("#contact");
+    link?.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        contactSection?.scrollIntoView({ behavior: "smooth" });
+
+        if (location.pathname === "/" || location.pathname === "/en/") {
+            history.replaceState(null, "", "#contact");
+        }
+    });
+</script>

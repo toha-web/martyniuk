@@ -1,16 +1,359 @@
 ---
+import { Image } from 'astro:assets';
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+
+import bank from "../assets/images/accord.jpg";
+import borjomi from "../assets/images/borjomi.jpg";
+import boss from "../assets/images/boss.jpg";
+
+import video from "../assets/video/main_video.mp4";
+const slogan = ["осмислений", "дизайн для", "сучасних брендів"];
+const textLeft = ["думати", "формувати", "вдосконалювати", "поєднувати"];
+const textRight = ["айдентика", "система", "досвід", "бренди"];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<!-- title, description, og:title, og:image -->
+
+<BaseLayout
+    description="Alex Martyniuk is a Ukrainian designer and art director specializing in brand identity, visual systems, and spatial design. With a keen eye for detail and a passion for creating meaningful experiences, Alex helps brands connect with their audiences through thoughtful design solutions."
+    og={{
+        title: "Alex Martyniuk - Designer & Art Director",
+        image: "https://example.com/og-image.jpg",
+    }}
+>
+    <PageHero media={video} slogan={slogan} textLeft={textLeft} textRight={textRight} />
+    <div class="projects">
+        <div class="projects-title">
+            <a href="/roboty" class="with-arrow" style="--arrow-offset-y: 10px">обрані проєкти</a>
+        </div>
+        <div class="projects-bank">
+            <div class="project-description">
+                <div class="project-title"><a href="/roboty/accordbank" class="with-arrow">Акордбанк</a></div>
+                <div class="project-subtitle">бренд-система</div>
+                <div class="project-works">
+                    артдирекшн<br />
+                    айдентика<br />
+                    indoor | outdoor<br />
+                    digital
+                </div>
+            </div>
+            <div class="project-image">
+                <a href="/roboty/accordbank">
+                    <Image src={bank} alt="AccordBank project image" />
+                </a>
+            </div>
+        </div>
+        <div class="projects-boss">
+            <div class="project-description">
+                <div class="project-title"><a href="/roboty/beautyboss" class="with-arrow">Beauty B.O.S.S.</a></div>
+                <div class="project-subtitle">айдентика</div>
+                <div class="project-works">
+                    айдентика<br />
+                    артдирекшн<br />
+                    друк<br />
+                    мерч
+                </div>
+            </div>
+            <div class="project-image">
+                <a href="/roboty/beautyboss">
+                    <Image src={boss} alt="Beauty Boss project image" />
+                </a>
+            </div>
+        </div>
+        <div class="projects-borjomi">
+            <div class="project-description">
+                <div class="project-title"><a href="/roboty/displays" class="with-arrow">Ритейл-дисплеї</a></div>
+                <div class="project-subtitle">просторовий та промодизайн</div>
+                <div class="project-works">
+                    концепція<br />
+                    артдирекшн<br />
+                    POSM<br />
+                    виробництво
+                </div>
+            </div>
+            <div class="project-image">
+                <a href="/roboty/displays">
+                    <Image src={borjomi} alt="Retail displays project image" />
+                </a>
+            </div>
+        </div>
+        <div class="projects-more">
+            <a href="/roboty" class="with-arrow" style="--arrow-offset-y: 10px">більше проєктів</a>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    .projects-title, .projects-more{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 4.875rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        @media all and (max-width: 600px){
+            font-size: 4.25rem;
+        }
+        @media all and (max-width: 450px){
+            font-size: 3.25rem;
+        }
+    }
+    .project-title{
+        font-family: 'Science Gothic', sans-serif;
+        line-height: 1;
+        font-size: 3rem;
+        font-width: extra-condensed;
+        font-stretch: extra-condensed;
+        margin-bottom: 10px;
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        @media all and (max-width: 600px){
+            font-size: 3.5rem;
+        }
+        @media all and (max-width: 450px){
+            font-size: 2.75rem;
+        }
+        @media all and (max-width: 400px){
+            font-size: 2.1rem;
+        }
+    }
+    .project-subtitle{
+        font-family: 'Mulish', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1;
+        margin-bottom: 40px;
+        @media all and (max-width: 1100px){
+            margin-bottom: 30px;
+        }
+        @media all and (max-width: 960px){
+            margin-bottom: 20px;
+        }
+        @media all and (max-width: 768px){
+            font-size: 1.7rem;
+        }
+        @media all and (max-width: 600px){
+            font-size: 2rem;
+        }
+        @media all and (max-width: 400px){
+            font-size: 1.75rem;
+            margin-bottom: 10px;
+        }
+    }
+    .project-works{
+        font-family: 'Mulish', sans-serif;
+        font-size: 1rem;
+        line-height: 1.2;
+        font-weight: 300;
+        @media all and (max-width: 768px){
+            font-size: 1.25rem;
+        }
+        @media all and (max-width: 600px){
+            font-size: 1.5rem;
+        }
+    }
+    .project-image{
+        border-radius: 25px;
+        overflow: hidden;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.2s;
+            &:hover{
+                cursor: pointer;
+                filter: grayscale(0%);
+            }
+            @media all and (hover: none) {
+                filter: grayscale(0%);
+            }
+        }
+        @media all and (max-width: 960px){
+            border-radius: 15px;
+        }
+    }
+
+    .projects{
+        width: 100%;
+        margin-bottom: 150px;
+        display: grid;
+        grid-template-columns: repeat(20, minmax(0, 1fr));
+        grid-auto-rows: clamp(20px, 3.7vw, 50px);
+        @media all and (max-width: 960px){
+            margin-bottom: 100px;
+        }
+        @media all and (max-width: 768px){
+            margin-bottom: 60px;
+        }
+        @media all and (max-width: 450px){
+            margin-bottom: 50px;
+        }
+    }
+    .projects-title{
+        grid-column: 2 / span 11;
+        grid-row-start: 1;
+    }
+    .projects-more{
+        grid-column: 2 / span 10;
+        grid-row: 41 / span 2;
+        @media all and (max-width: 900px){
+            grid-row-start: 38;
+        }
+        @media all and (max-width: 650px){
+            grid-row-start: 55;
+        }
+        @media all and (max-width: 500px){
+            grid-row-start: 48;
+        }
+        @media all and (max-width: 450px){
+            grid-row-start: 47;
+        }
+        @media all and (max-width: 400px){
+            grid-row-start: 44;
+        }
+        @media all and (max-width: 350px){
+            grid-row-start: 42;
+        }
+    }
+    .projects-title, 
+    .projects-more{
+        @media all and (max-width: 960px){
+            grid-column: 2 / -1;
+        }
+    }
+
+    .projects-bank{
+        display: contents;
+        .project-description{
+            grid-column: 2 / span 6;
+            grid-row-start: 4;
+            @media all and (max-width: 400px){
+                grid-column: 2 / span 7;
+            }
+        }
+        .project-image{
+            grid-column: -1 / 7;
+            grid-row-start: 4;
+            max-width: 900px;
+            aspect-ratio: 900 / 500;
+            justify-self: self-end;
+            @media all and (max-width: 1100px){
+                grid-column: -1 / 8;
+            }
+            @media all and (max-width: 900px){
+                grid-column: -1 / 9;
+            }
+            @media all and (max-width: 650px){
+                grid-row-start: 7;
+            }
+        }
+    }
+    .projects-boss{
+        display: contents;
+        .project-description{
+            grid-column: 11 / span 6;
+            grid-row-start: 17;
+            @media all and (max-width: 1050px){
+                grid-column: 11 / span 7;
+            }
+            @media all and (max-width: 900px){
+                grid-column: 11 / span 8;
+            }
+        }
+        .project-image{
+            max-width: 580px;
+            grid-column: 1 / span 9;
+            grid-row-start: 17;
+            aspect-ratio: 580 / 580;
+        }
+        @media all and (max-width: 1100px){
+            .project-description, .project-image{
+                grid-row-start: 16;
+            }
+        }
+        @media all and (max-width: 900px){
+            .project-description, .project-image{
+                grid-row-start: 15;
+            }
+        }
+        @media all and (max-width: 650px){
+            .project-description{
+                grid-row-start: 18;
+                grid-column: 11 / -1;
+            }
+            .project-image{
+                grid-row-start: 21;
+            }
+        }
+        @media all and (max-width: 500px){
+            .project-description{
+                grid-row-start: 16;
+                grid-column: 10 / -1;
+            }
+            .project-image{
+                grid-row-start: 19;
+                grid-column: 1 / span 8;
+            }
+        }
+        @media all and (max-width: 400px){
+            .project-description{
+                grid-row-start: 15;
+            }
+            .project-image{
+                grid-row-start: 18;
+            }
+        }
+    }
+    .projects-borjomi{
+        display: contents;
+        .project-description{
+            grid-column: 6 / span 6;
+            grid-row-start: 34;
+            @media all and (max-width: 1000px){
+                grid-row-start: 33;
+                grid-column: 6 / span 7;
+            }
+            @media all and (max-width: 900px){
+                grid-row-start: 31;
+                grid-column: 5 / span 8;
+            }
+            @media all and (max-width: 650px){
+                grid-row-start: 35;
+                grid-column: 5 / span 10;
+            }
+            @media all and (max-width: 500px){
+                grid-row-start: 30;
+                grid-column: 5 / span 12;
+            }
+            @media all and (max-width: 400px){
+                grid-row-start: 27;
+                grid-column: 5 / -1;
+            }
+        }
+        .project-image{
+            grid-column: 13 / span 7;
+            grid-row-start: 24;
+            max-width: 432px;
+            aspect-ratio: 432 / 687;
+            @media all and (max-width: 900px){
+                grid-row-start: 22;
+            }
+            @media all and (max-width: 650px){
+                grid-row-start: 39;
+            }
+            @media all and (max-width: 500px){
+                grid-row-start: 34;
+            }
+            @media all and (max-width: 400px){
+                grid-row-start: 32;
+            }
+        }
+    }
+</style>
