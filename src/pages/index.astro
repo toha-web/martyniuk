@@ -161,6 +161,7 @@ const textRight = ["айдентика", "система", "досвід", "бр
     .project-image{
         border-radius: 25px;
         overflow: hidden;
+        width: 100%;
         img{
             width: 100%;
             height: 100%;
@@ -233,22 +234,22 @@ const textRight = ["айдентика", "система", "досвід", "бр
         display: contents;
         .project-description{
             grid-column: 2 / span 6;
-            grid-row-start: 4;
+            grid-row: 4 / span 4;
             @media all and (max-width: 400px){
                 grid-column: 2 / span 7;
             }
         }
         .project-image{
-            grid-column: -1 / 7;
-            grid-row-start: 4;
+            grid-column: span 14 / -1;
+            grid-row: 4 / span 10;
             max-width: 900px;
             aspect-ratio: 900 / 500;
-            justify-self: self-end;
+            justify-self: end;
             @media all and (max-width: 1100px){
-                grid-column: -1 / 8;
+                grid-column: span 13 / -1;
             }
             @media all and (max-width: 900px){
-                grid-column: -1 / 9;
+                grid-column: span 12 / -1;
             }
             @media all and (max-width: 650px){
                 grid-row-start: 7;
@@ -259,7 +260,7 @@ const textRight = ["айдентика", "система", "досвід", "бр
         display: contents;
         .project-description{
             grid-column: 11 / span 6;
-            grid-row-start: 17;
+            grid-row: 17 / span 5;
             @media all and (max-width: 1050px){
                 grid-column: 11 / span 7;
             }
@@ -268,9 +269,9 @@ const textRight = ["айдентика", "система", "досвід", "бр
             }
         }
         .project-image{
-            max-width: 580px;
             grid-column: 1 / span 9;
-            grid-row-start: 17;
+            grid-row: 17 / span 12;
+            max-width: 580px;
             aspect-ratio: 580 / 580;
         }
         @media all and (max-width: 1100px){
@@ -315,7 +316,7 @@ const textRight = ["айдентика", "система", "досвід", "бр
         display: contents;
         .project-description{
             grid-column: 6 / span 6;
-            grid-row-start: 34;
+            grid-row: 34 / span 5;
             @media all and (max-width: 1000px){
                 grid-row-start: 33;
                 grid-column: 6 / span 7;
@@ -339,7 +340,7 @@ const textRight = ["айдентика", "система", "досвід", "бр
         }
         .project-image{
             grid-column: 13 / span 7;
-            grid-row-start: 24;
+            grid-row: 24 / span 14;
             max-width: 432px;
             aspect-ratio: 432 / 687;
             @media all and (max-width: 900px){
@@ -352,7 +353,7 @@ const textRight = ["айдентика", "система", "досвід", "бр
                 grid-row-start: 34;
             }
             @media all and (max-width: 400px){
-                grid-row-start: 32;
+                grid-row: 32 / span 11;
             }
         }
     }

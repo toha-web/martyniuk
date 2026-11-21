@@ -25,33 +25,37 @@
     overflow: hidden;
 }
 
-.with-arrow{
+.with-arrow {
     display: flex;
     align-items: center;
     column-gap: 20px;
     cursor: pointer;
     width: fit-content;
-    --arrow-offset: var(--arrow-offset-y);
-    &::after{
-        content: url("../assets/arrow_right.svg");
+    --arrow-offset: var(--arrow-offset-y, 0px);
+
+    &::after {
+        content: "";
         flex-shrink: 0;
+        display: block;
         width: 51px;
         height: 8px;
-        display: flex;
-        align-items: center;
-        transition: all 0.75s;
+        background: url("../assets/arrow_right.svg") center / contain no-repeat;
+        transition: transform 0.75s;
         transform-origin: left;
         translate: 0 var(--arrow-offset, 0px);
-        @media all and (max-width: 768px){
+
+        @media all and (max-width: 768px) {
             width: 35px;
             height: 10px;
-            --arrow-offset: calc(var(--arrow-offset-y) - 5px);
+            --arrow-offset: calc(var(--arrow-offset-y, 5px) - 5px);
         }
-        @media all and (max-width: 600px){
-            --arrow-offset: calc(var(--arrow-offset-y) - 7px);
+
+        @media all and (max-width: 600px) {
+            --arrow-offset: calc(var(--arrow-offset-y, 7px) - 7px);
         }
     }
-    &:hover::after{
+
+    &:hover::after {
         transform: scaleX(1.25);
     }
 }
